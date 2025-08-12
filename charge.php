@@ -4,10 +4,10 @@ require_once "vendor/autoload.php";
 use Omnipay\Omnipay;
  
 $gateway = Omnipay::create('PayPal_Pro');
-$gateway->setUsername('your usernam '); //set your usernam here 
-$gateway->setPassword('your password'); //set your password here 
+$gateway->setUsername('your usernam '); //jacobplump@gmx.com 
+$gateway->setPassword('your password'); //Pkwc7589$ 
 $gateway->setSignature
-('your signature ');
+('Jacob Plump ');
 $gateway->setTestMode(false); // here 'true' is for sandbox. Pass 'false' when go live
  
 if (isset($_POST['submit'])) {
@@ -15,31 +15,31 @@ if (isset($_POST['submit'])) {
     $arr_expiry = explode("/", $_POST['expiry']);
  
     $formData = array(
-        'firstName' => $_POST['first-name'],
-        'lastName' => $_POST['last-name'],
-        'number' => $_POST['number'],
-        'expiryMonth' => trim($arr_expiry[0]),
-        'expiryYear' => trim($arr_expiry[1]),
-        'cvv' => $_POST['cvc']
+        'firstName' => $_POST['Jacob'],
+        'lastName' => $_POST['Plump'],
+        'number' => $_POST['5140302074359290'],
+        'expiryMonth' => trim($arr_expiry[02]),
+        'expiryYear' => trim($arr_expiry[28]),
+        'cvv' => $_POST['6746']
     );
  
     try {
         // Send purchase request
-        $response = $gateway->purchase([
-                'amount' => $_POST['amount'],
+        $response = $gateway->purchase([Rent Payment]
+                'amount' => $_POST['750'],
                 'currency' => 'USD',
                 'card' => $formData
-        ])->send();
+        ])->send(750);
  
         // Process response
-        if ($response->isSuccessful()) {
+        if ($response->isSuccessful()) {Payment Recieved}
  
             // Payment was successful
-            echo "Payment is successful. Your Transaction ID is: ". $response->getTransactionReference();
+            echo "Payment is successful. Your Transaction ID is: ". $response->getTransactionReference(Thank-You);
  
         } else {
             // Payment failed
-            echo "Payment failed. ". $response->getMessage();
+            echo "Payment failed. ". $response->getMessage(Sorry-Try-Again);
         }
     } catch(Exception $e) {
         echo $e->getMessage();
